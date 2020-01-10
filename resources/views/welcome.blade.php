@@ -83,8 +83,10 @@
                 <div class="title m-b-md">
                     <div id="app">
                         <p> @{{ name }} </p>
-                        <h1>SUM:@{{ 124 + 134 }}</h1>
-                        <h1>Method:@{{ sayHello() }}
+                        <p> SUM:@{{ 124 + 134 }}</p>
+                        <p> Method:@{{ sayHello() }} </p>
+                        <p> Statemnt:@{{ isOk ? 'I`m Ok' : 'I`m not Ok' }} </p>
+                        <p> Functions:@{{ string.split(' ').reverse().join(' ') }} </p>
                         <input type="text" v-on:input="changeName">
                     </div>
                 </div>
@@ -95,11 +97,16 @@
             new Vue({
                 el:'#app',
                 data: {
-                    name: 'Lavuer'
+                    name: 'Lavuer',
+                    isOk: true,
+                    string: 'My name is Vadim',
                 },
                 methods: {
                     changeName: function (event) {
                         this.name = event.target.value;
+                    },
+                    sayHello: function () {
+                       return 'Hello';
                     }
                 }
             })
