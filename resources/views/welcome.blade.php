@@ -82,7 +82,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     <div id="app">
-                       <p><a v-bind:href="url">Google</a></p>
+                        <p v-html="link"></p>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
             new Vue({
                 el:'#app',
                 data: {
-                 url:'http://google.com'
+                 link:'<a href ="http://google.com"> google </a>'
                 }
 
             })
